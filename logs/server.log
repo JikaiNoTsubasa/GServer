@@ -1,0 +1,8 @@
+2021-07-02 14:15:06,849 [INFO ] (GServer.java:main:31) Server started in 439ms
+2021-07-02 14:15:10,828 [DEBUG] (CodeHttpHandler.java:handle:23) New request received for CODE Handler from 127.0.0.1
+2021-07-02 14:15:10,830 [DEBUG] (CodeHttpHandler.java:getCode:68) Request get code
+2021-07-02 14:15:10,831 [DEBUG] (CodeHttpHandler.java:getCode:71) Internal code is null, loading from file...
+2021-07-02 14:15:10,831 [DEBUG] (CodeHttpHandler.java:getCode:74) Code loaded
+2021-07-02 14:15:24,424 [DEBUG] (CodeHttpHandler.java:handle:23) New request received for CODE Handler from 127.0.0.1
+2021-07-02 14:15:24,425 [DEBUG] (CodeHttpHandler.java:getCode:68) Request get code
+2021-07-02 14:15:24,426 [DEBUG] (CodeHttpHandler.java:getCode:84) Internal code is valid, providing the cached code

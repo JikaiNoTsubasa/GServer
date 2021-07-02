@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+    <GContextList>
+        <GContext>
+            <contextName>neolan</contextName>
+            <contextType>GAME</contextType>
+        </GContext>
+        <GContext>
+            <contextName>license</contextName>
+            <contextType>CODE</contextType>
+        </GContext>
+    </GContextList>
+    <serverIP>localhost</serverIP>
+    <serverPort>50000</serverPort>
+    <serverThreadPool>10</serverThreadPool>
+</config>
