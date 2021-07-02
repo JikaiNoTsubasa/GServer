@@ -1,0 +1,23 @@
+2021-07-02 14:07:21,526 [INFO ] (GServer.java:main:31) Server started in 399ms
+2021-07-02 14:07:53,789 [INFO ] (GServer.java:main:27) Starting server...
+2021-07-02 14:07:53,791 [INFO ] (GServer.java:init:35) Server initialisation...
+2021-07-02 14:07:53,792 [DEBUG] (GServer.java:storeDefaultConfig:72) Storing default config...
+2021-07-02 14:07:53,969 [DEBUG] (GServer.java:storeDefaultConfig:87) Stored default config to conf/server.xml
+2021-07-02 14:07:54,209 [DEBUG] (GServer.java:lambda$0:59) Creating context: neolan
+2021-07-02 14:07:54,212 [DEBUG] (GServer.java:lambda$0:59) Creating context: license
+2021-07-02 14:07:54,214 [INFO ] (GServer.java:main:31) Server started in 426ms
+2021-07-02 14:08:56,069 [DEBUG] (CodeHttpHandler.java:handle:24) New request received for GAME Handler from 127.0.0.1
+2021-07-02 14:08:56,072 [ERROR] (CodeHttpHandler.java:getCode:70) Cannot load code
+java.io.IOException: File conf/code does not exist
+	at fr.triedge.web.server.model.CodeHttpHandler.loadCode(CodeHttpHandler.java:85)
+	at fr.triedge.web.server.model.CodeHttpHandler.getCode(CodeHttpHandler.java:68)
+	at fr.triedge.web.server.model.CodeHttpHandler.handle(CodeHttpHandler.java:33)
+	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:78)
+	at org.jboss.sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:80)
+	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:81)
+	at org.jboss.sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:710)
+	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:78)
+	at org.jboss.sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:682)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
