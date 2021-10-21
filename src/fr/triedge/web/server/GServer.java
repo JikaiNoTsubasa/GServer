@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 import org.jboss.com.sun.net.httpserver.HttpHandler;
 import org.jboss.com.sun.net.httpserver.HttpServer;
 
-import fr.triedge.web.server.model.CodeHttpHandler;
 import fr.triedge.web.server.model.DefaultHttpHandler;
 import fr.triedge.web.server.model.GContext;
 import fr.triedge.web.server.model.GContextType;
@@ -50,7 +49,7 @@ public class GServer {
 						handler = RestFactory.createGameContext(ctx.getContextName());
 						break;
 					case CODE:
-						handler = new CodeHttpHandler();
+						handler = RestFactory.createCodeContext(ctx.getContextName());
 						break;
 					default:
 						handler = new DefaultHttpHandler();

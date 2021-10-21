@@ -2,7 +2,6 @@ package fr.triedge.web.server.rest.context;
 
 import java.util.HashMap;
 
-import fr.triedge.web.server.model.GResponse;
 import fr.triedge.web.server.model.GameManager;
 import fr.triedge.web.server.model.Params;
 import fr.triedge.web.server.rest.action.GameAction;
@@ -25,7 +24,7 @@ public class GameContext extends RestContext{
 	}
 
 	@Override
-	public GResponse execute(String action, Params params) {
+	public String execute(String action, Params params) {
 		GameAction ac = getActions().get(action);
 		return ac.execute(this, params);
 	}

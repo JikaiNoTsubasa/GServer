@@ -1,16 +1,16 @@
 package fr.triedge.web.server.rest.action;
 
 import fr.triedge.web.server.model.Params;
-import fr.triedge.web.server.rest.context.GameContext;
+import fr.triedge.web.server.rest.context.CodeContext;
 
-public abstract class GameAction {
+public abstract class CodeAction {
 
 	private String name;
 	
-	public GameAction() {
+	public CodeAction() {
 	}
 	
-	public abstract String execute(GameContext ctx, Params params);
+	public abstract String execute(CodeContext ctx, Params params);
 
 	public String getName() {
 		return name;

@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import fr.triedge.web.server.model.GCode;
-import fr.triedge.web.server.model.GResponse;
 import fr.triedge.web.server.model.Game;
 import fr.triedge.web.server.model.Params;
 import fr.triedge.web.server.model.ResponseGameUpdate;
@@ -21,9 +20,8 @@ public class ActionGameUpdate extends GameAction{
 	}
 	
 	@Override
-	public GResponse execute(GameContext ctx, Params params) {
+	public String execute(GameContext ctx, Params params) {
 		log.debug("Request update on ID: "+params.get(Game.PARAM_ID)+" with players: "+params.get(Game.PARAM_players));
-		GResponse res = new GResponse();
 		ResponseGameUpdate rgu = new ResponseGameUpdate();
 		if (ctx.getManager().updateNumberOfPlayers(
 				params.get(Game.PARAM_ID), 
@@ -37,11 +35,11 @@ public class ActionGameUpdate extends GameAction{
 			log.warn("Failed to updated players count to "+params.get(Game.PARAM_players)+" for ID: "+params.get(Game.PARAM_ID));
 		}
 		try {
-			res.setContent(Utils.toJson(rgu));
+			return Utils.toJson(rgu);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
+			return null;
 		}
-		return res;
 	}
 
 }

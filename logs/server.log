@@ -1,1 +1,5 @@
-2021-10-21 11:55:03,179 [DEBUG] (ActionGameGet.java:execute:41) Request list of all games
+2021-10-21 13:32:59,487 [DEBUG] (CodeManager.java:setCode:36) Code is the same and will not be updated
+2021-10-21 13:33:12,471 [DEBUG] (Utils.java:readParams:21) FULL URL: /license?action=get
+2021-10-21 13:33:12,471 [DEBUG] (Utils.java:readParams:25) Parsed Param: action=get
+2021-10-21 13:33:12,471 [DEBUG] (ActionCodeGet.java:execute:25) Request code for license
+2021-10-21 13:33:12,472 [DEBUG] (ActionCodeGet.java:execute:36) License code is provided

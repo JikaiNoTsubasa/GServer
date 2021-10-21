@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import fr.triedge.web.server.model.GCode;
-import fr.triedge.web.server.model.GResponse;
 import fr.triedge.web.server.model.Game;
 import fr.triedge.web.server.model.Params;
 import fr.triedge.web.server.model.ResponseGameList;
@@ -21,8 +20,7 @@ public class ActionGameGet extends GameAction{
 	}
 	
 	@Override
-	public GResponse execute(GameContext ctx, Params params) {
-		GResponse res = new GResponse();
+	public String execute(GameContext ctx, Params params) {
 		ResponseGameList rgl = new ResponseGameList();
 		if (params.containsKey(Game.PARAM_ID)) {
 			String id = params.get(Game.PARAM_ID);
@@ -44,11 +42,11 @@ public class ActionGameGet extends GameAction{
 		}
 		
 		try {
-			res.setContent(Utils.toJson(rgl));
+			return Utils.toJson(rgl);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
+			return null;
 		}
-		return res;
 	}
 
 }

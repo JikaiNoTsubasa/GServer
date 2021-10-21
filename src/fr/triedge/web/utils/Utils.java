@@ -9,7 +9,6 @@ import org.jboss.com.sun.net.httpserver.HttpExchange;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import fr.triedge.web.server.model.GResponse;
 import fr.triedge.web.server.model.Params;
 
 public class Utils {
@@ -34,17 +33,6 @@ public class Utils {
 		http.sendResponseHeaders(code, body.length());
 		OutputStream out = http.getResponseBody();
 		out.write(body.getBytes());
-		out.flush();
-		out.close();
-	}
-	
-	public static void sendResponse(GResponse resp, HttpExchange http) throws IOException {
-		int code = 200;
-		if (resp.getCode()>0)
-			code = resp.getCode();
-		http.sendResponseHeaders(code, resp.getContent().length());
-		OutputStream out = http.getResponseBody();
-		out.write(resp.getContent().getBytes());
 		out.flush();
 		out.close();
 	}
