@@ -1,5 +1,1 @@
-2021-10-21 10:58:24,038 [DEBUG] (Utils.java:readParams:26) Parsed Param: ip=91.176.130.108
-2021-10-21 10:58:24,039 [DEBUG] (Utils.java:readParams:26) Parsed Param: desc=Jikai
-2021-10-21 10:58:24,039 [DEBUG] (Utils.java:readParams:26) Parsed Param: pwd=pwd1
-2021-10-21 10:58:24,039 [DEBUG] (ActionGameCreate.java:execute:25) Request create new game with ID: 6fc6d653-c08c-429e-99b8-50fed826e744
-2021-10-21 10:58:24,040 [DEBUG] (ActionGameCreate.java:execute:43) Game created with: 6fc6d653-c08c-429e-99b8-50fed826e744::91.176.130.108::1::Jikai::20211021-105824::pwd1
+2021-10-21 11:55:03,179 [DEBUG] (ActionGameGet.java:execute:41) Request list of all games

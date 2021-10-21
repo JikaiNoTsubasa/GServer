@@ -3,13 +3,14 @@ package fr.triedge.web.server.rest.action;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.triedge.web.server.model.GCode;
 import fr.triedge.web.server.model.GResponse;
+import fr.triedge.web.server.model.Game;
 import fr.triedge.web.server.model.Params;
 import fr.triedge.web.server.model.ResponseGameList;
 import fr.triedge.web.server.rest.context.GameContext;
+import fr.triedge.web.utils.Utils;
 
 public class ActionGameGet extends GameAction{
 	
@@ -21,16 +22,29 @@ public class ActionGameGet extends GameAction{
 	
 	@Override
 	public GResponse execute(GameContext ctx, Params params) {
-		log.debug("Request list of all games");
 		GResponse res = new GResponse();
 		ResponseGameList rgl = new ResponseGameList();
-		rgl.setCode(GCode.OK);
-		rgl.setGames(ctx.getManager().getGames());
-		ObjectMapper mapper = new ObjectMapper();
-		String ret;
+		if (params.containsKey(Game.PARAM_ID)) {
+			String id = params.get(Game.PARAM_ID);
+			log.debug("Request game for ID: "+id);
+			Game g = ctx.getManager().getGameByID(id);
+			if (g == null) {
+				rgl.setCode(GCode.ERROR);
+				log.debug("No game found for ID: "+id);
+			}else {
+				rgl.setCode(GCode.OK);
+				rgl.getGames().add(g);
+				log.debug("Game found for ID: "+id);
+			}
+			log.debug("Finished check for game ID: "+id);
+		}else {
+			log.debug("Request list of all games");
+			rgl.setCode(GCode.OK);
+			rgl.setGames(ctx.getManager().getGames());
+		}
+		
 		try {
-			ret = mapper.writeValueAsString(rgl);
-			res.setContent(ret);
+			res.setContent(Utils.toJson(rgl));
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}

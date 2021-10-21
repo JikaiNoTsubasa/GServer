@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ResponseGameList {
 
 	private GCode code;
-	private ArrayList<Game> games;
+	private ArrayList<Game> games = new ArrayList<Game>();
 	public GCode getCode() {
 		return code;
 	}

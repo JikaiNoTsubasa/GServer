@@ -71,4 +71,11 @@ private ArrayList<Game> games = new ArrayList<>();
 				return game;
 		return null;
 	}
+	
+	public Game getGameByID(String id){
+		for (Game game : games)
+			if (id.equals(game.getId()))
+				return game;
+		return null;
+	}
 }
