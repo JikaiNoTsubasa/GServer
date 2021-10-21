@@ -2,6 +2,7 @@ package fr.triedge.web.server.model;
 
 public class GResponse {
 
+	private int code;
 	private String content;
 	
 	public GResponse() {
@@ -18,4 +19,14 @@ public class GResponse {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+	
+	
 }

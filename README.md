@@ -5,9 +5,9 @@ You can run the jar file for the first time with only a folder called *conf* asi
 # REST Calls
 ## Create a game
 In order to create a new game, execute the following rest call:
-> http://hostname:port/context?action=create&id=12345&ip=192.168.0.1&desc=MyGame
+> http://hostname:port/context?action=create&id=12345&ip=192.168.0.1&desc=MyGame&pwd=mypassword
 
-Create games are only online, it means that if the program is shutdown, the game list is not saved.
+Create games are only in memory, it means that if the program is shutdown, the game list is not saved.
 
 * hostname: the server on which the program is run
 * port: the port specified by the program (default: 50000)
@@ -16,6 +16,7 @@ Create games are only online, it means that if the program is shutdown, the game
 * id: a unique id from your application, each new game must have a unique id
 * ip: the hostname or ip of the game's host
 * desc: a description or name of the created game
+* pwd: a password to protect others to login to this game
 
 ### Example
 > http://server1:50000/mygame?action=create&id=ABX-546-TRE&ip=192.168.0.1&desc=JoJpGame

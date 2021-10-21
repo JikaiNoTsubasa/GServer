@@ -44,8 +44,9 @@ public class GameHttpHandler implements HttpHandler{
 	}
 
 	private GResponse updateGame(Params params) {
+		log.debug("Request update on ID: "+params.get(Game.PARAM_ID)+" with players: "+params.get(Game.PARAM_players));
 		GResponse res = new GResponse();
-		if (manager.updateNumberOfPlayers(
+		if (getManager().updateNumberOfPlayers(
 				params.get(Game.PARAM_ID), 
 				Integer.valueOf(params.get(Game.PARAM_players)))) {
 			res.setContent("OK");
@@ -55,6 +56,7 @@ public class GameHttpHandler implements HttpHandler{
 	}
 
 	private GResponse getGames(Params params) {
+		log.debug("Request list of all games");
 		GResponse res = new GResponse();
 		String s = "";
 		for (Game g : getManager().getGames())
@@ -68,6 +70,7 @@ public class GameHttpHandler implements HttpHandler{
 	}
 
 	private GResponse deleteGame(Params params) {
+		log.debug("Request delete game with ID: "+params.get(Game.PARAM_ID));
 		GResponse res = new GResponse();
 		String id = params.get(Game.PARAM_ID);
 		log.debug("Request delete game with ID: "+id);

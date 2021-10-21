@@ -12,11 +12,13 @@ public class Game {
 	private String id, name, hostname;
 	private Date creationDate;
 	private int currentPlayers;
+	private String password;
 	
 	public static final String PARAM_ID					= "id";
 	public static final String PARAM_IP					= "ip";
 	public static final String PARAM_NAME				= "desc";
 	public static final String PARAM_players			= "players";
+	public static final String PARAM_PWD				= "pwd";
 	
 	public static final String ACTION_CREATE			= "create";
 	public static final String ACTION_DELETE			= "delete";
@@ -68,6 +70,14 @@ public class Game {
 		this.currentPlayers = currentPlayers;
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder tmp = new StringBuilder();
@@ -81,6 +91,8 @@ public class Game {
 		tmp.append(sep);
 		SimpleDateFormat format = new SimpleDateFormat("YYYYMMdd-HHmmss");
 		tmp.append(format.format(getCreationDate()));
+		tmp.append(sep);
+		tmp.append(getPassword());
 		return tmp.toString();
 	}
 	

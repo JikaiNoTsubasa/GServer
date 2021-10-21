@@ -15,7 +15,7 @@ import fr.triedge.web.server.model.CodeHttpHandler;
 import fr.triedge.web.server.model.DefaultHttpHandler;
 import fr.triedge.web.server.model.GContext;
 import fr.triedge.web.server.model.GContextType;
-import fr.triedge.web.server.model.GameHttpHandler;
+import fr.triedge.web.server.rest.RestFactory;
 
 public class GServer {
 
@@ -47,7 +47,7 @@ public class GServer {
 				HttpHandler handler = null;
 				switch(ctx.getContextType()) {
 					case GAME:
-						handler = new GameHttpHandler();
+						handler = RestFactory.createGameContext(ctx.getContextName());
 						break;
 					case CODE:
 						handler = new CodeHttpHandler();

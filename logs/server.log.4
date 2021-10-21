@@ -1,23 +1,9 @@
-2021-07-02 14:07:21,526 [INFO ] (GServer.java:main:31) Server started in 399ms
-2021-07-02 14:07:53,789 [INFO ] (GServer.java:main:27) Starting server...
-2021-07-02 14:07:53,791 [INFO ] (GServer.java:init:35) Server initialisation...
-2021-07-02 14:07:53,792 [DEBUG] (GServer.java:storeDefaultConfig:72) Storing default config...
-2021-07-02 14:07:53,969 [DEBUG] (GServer.java:storeDefaultConfig:87) Stored default config to conf/server.xml
-2021-07-02 14:07:54,209 [DEBUG] (GServer.java:lambda$0:59) Creating context: neolan
-2021-07-02 14:07:54,212 [DEBUG] (GServer.java:lambda$0:59) Creating context: license
-2021-07-02 14:07:54,214 [INFO ] (GServer.java:main:31) Server started in 426ms
-2021-07-02 14:08:56,069 [DEBUG] (CodeHttpHandler.java:handle:24) New request received for GAME Handler from 127.0.0.1
-2021-07-02 14:08:56,072 [ERROR] (CodeHttpHandler.java:getCode:70) Cannot load code
-java.io.IOException: File conf/code does not exist
-	at fr.triedge.web.server.model.CodeHttpHandler.loadCode(CodeHttpHandler.java:85)
-	at fr.triedge.web.server.model.CodeHttpHandler.getCode(CodeHttpHandler.java:68)
-	at fr.triedge.web.server.model.CodeHttpHandler.handle(CodeHttpHandler.java:33)
-	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:78)
-	at org.jboss.sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:80)
-	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:81)
-	at org.jboss.sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:710)
-	at org.jboss.com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:78)
-	at org.jboss.sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:682)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-10-21 10:57:36,858 [DEBUG] (Utils.java:readParams:26) Parsed Param: desc=Jikai
+2021-10-21 10:57:36,859 [DEBUG] (Utils.java:readParams:26) Parsed Param: pwd=pwd1
+2021-10-21 10:57:36,859 [DEBUG] (ActionGameCreate.java:execute:25) Request create new game with ID: f8d0098e-a732-4b0f-810a-434db99f7120
+2021-10-21 10:57:36,859 [DEBUG] (ActionGameCreate.java:execute:43) Game created with: f8d0098e-a732-4b0f-810a-434db99f7120::55.13.201.110::1::Jikai::20211021-105736::null
+2021-10-21 10:57:37,480 [DEBUG] (Utils.java:readParams:22) FULL URL: /neolan?action=create&id=47052d51-6a75-463a-b956-8ae52c1202e6&ip=227.232.117.112&desc=Jikai&pwd=pwd1
+2021-10-21 10:57:37,480 [DEBUG] (Utils.java:readParams:26) Parsed Param: action=create
+2021-10-21 10:57:37,481 [DEBUG] (Utils.java:readParams:26) Parsed Param: id=47052d51-6a75-463a-b956-8ae52c1202e6
+2021-10-21 10:57:37,481 [DEBUG] (Utils.java:readParams:26) Parsed Param: ip=227.232.117.112
+2021-10-21 10:57:37,481 [DEBUG] (Utils.java:readParams:26) Parsed Param: desc=Jikai

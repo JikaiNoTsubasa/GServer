@@ -23,6 +23,19 @@ private ArrayList<Game> games = new ArrayList<>();
 		return g;
 	}
 	
+	public Game createGame(String id, String ip, String desc, String password){
+		if (getGameByIP(ip) != null)
+			return null;
+		Game g = new Game();
+		g.setName(desc);
+		g.setHostname(ip);
+		g.setId(id);
+		g.setCurrentPlayers(1);
+		g.setPassword(password);
+		games.add(g);
+		return g;
+	}
+	
 	public boolean removeGame(String id){
 		Iterator<Game> it = games.iterator();
 		while(it.hasNext()){
