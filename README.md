@@ -2,6 +2,26 @@
 Game server holding status of current games and more
 # Setup
 You can run the jar file for the first time with only a folder called *conf* aside. It will create a basic config file inside if not present.
+# Config File
+Here is a config file:
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+    <GContextList>
+        <GContext>
+            <contextName>neolan</contextName>
+            <contextType>GAME</contextType>
+        </GContext>
+        <GContext>
+            <contextName>license</contextName>
+            <contextType>CODE</contextType>
+        </GContext>
+    </GContextList>
+    <serverIP>localhost</serverIP>
+    <serverPort>50000</serverPort>
+    <serverThreadPool>10</serverThreadPool>
+</config>
+```
 # REST Calls
 ## Create a game
 In order to create a new game, execute the following rest call:
